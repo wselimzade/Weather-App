@@ -515,6 +515,7 @@ h6 {
 .second-page-first-section
 .weather-degree {
   flex-direction: column;
+  text-align: center;
 }
 
 .second-page-first-section
@@ -533,6 +534,7 @@ h6 {
 .degree {
   margin-top: 1.6rem;
   margin-bottom: 3.2rem;
+  margin-left: 0!important;
 }
 
 .second-page-first-section
