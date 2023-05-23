@@ -1,0 +1,675 @@
+/*? @css-in default olculerini sifirlamaq */
+
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+html {
+  touch-action: manipulation;
+}
+
+html,
+body,
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.5s;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+button {
+  border: none;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 2.4rem;
+  background-color: #FFFFFF;
+  transition: all .5s;
+
+}
+
+.first-section,
+.second-section,
+.third-section,
+.second-page-first-section,
+.second-page-third-section {
+  transition: all .5s;
+}
+
+/* @fonts */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/*! @first-section */
+
+/*? city-location-search */
+
+.first-section 
+.city-location-search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.first-section 
+.city-location-search 
+.city-location {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.first-section
+.city-location-search
+.location,
+.arrow-down,
+.search {
+  width: 2.4rem;
+  height: 2.4rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+}
+
+.first-section
+.city-location-search
+.city-location h6 {
+  margin-left: 0.8rem;
+  font-weight: 400;
+  font-size: 1.4rem;
+  color: #201c1c;
+}
+
+.first-section
+.city-location-search
+.city-location 
+.arrow-down {
+  margin-left: 1.1rem;
+}
+
+/*? date-clock-weather */
+
+.first-section
+.date-clock-weather {
+  margin-top: 2.4rem;
+  background: linear-gradient(101.56deg, #4f7ffa 17.75%, #335fd1 84.8%);
+  color: #ffffff;
+  box-shadow: 0px 4px 40px rgba(59, 105, 222, 0.4);
+  border-radius: 12px;
+  width: 100%;
+}
+
+.first-section
+.date-clock-weather:hover {
+  background: linear-gradient(101.56deg, #496bc2 17.75%, #3556aa 84.8%);
+  cursor: pointer;
+}
+
+.first-section
+.date-clock-weather
+.date-clock-weather-content {
+    padding: 2.4rem;
+    width: 100%;
+    height: 100%;
+}
+
+/*? date-clock */
+
+.first-section
+.date-clock-weather
+.date-clock-weather-content
+.date-clock {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 400;
+    font-size: 1.4rem;
+    width: 100%;
+}
+
+/*? weather-degree */ 
+
+.first-section
+.date-clock-weather
+.date-clock-weather-content
+.weather-degree {
+    margin-top: 2.4rem;
+    margin-bottom: 2.4rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.first-section
+.date-clock-weather
+.date-clock-weather-content
+.weather-degree
+.weather{
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    width: 6.4rem;
+    height: 6.4rem;
+    display: flex;
+}
+
+.first-section
+.date-clock-weather
+.date-clock-weather-content
+.weather-degree
+.degree {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 1.2rem;
+}
+
+.first-section
+.date-clock-weather
+.date-clock-weather-content
+.weather-degree
+.degree 
+#degree {
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+.first-section
+.date-clock-weather
+.date-clock-weather-content
+.weather-degree
+.degree 
+#weather-type {
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+/*? update-clock */
+
+.first-section
+.date-clock-weather
+.date-clock-weather-content
+.update-clock {
+    display: flex;
+    font-weight: 400;
+    font-size: 1.4rem;
+}
+
+.first-section
+.date-clock-weather
+.date-clock-weather-content
+.update-clock 
+.refresh {
+    margin-left: 0.4rem;
+    display: flex;
+    align-items: center;
+}
+
+/*! @second-section */
+
+.second-section {
+    margin-top: 2.4rem;
+    width: 100%;
+}
+
+/*? text */
+
+.second-section .text {
+    margin-bottom: 1.6rem;
+    font-weight: 500;
+    font-size: 2rem;
+    color: #000000;
+}
+
+/*? dg-clock */
+
+.second-section .dg-clock {
+    display: flex;
+    justify-content: space-between;
+}
+
+.second-section
+.dg-clock
+.dg-clock-div {
+    width: 7.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #FBFBFB;
+    border-radius: 0.4rem;
+    padding: 1.2rem;
+    cursor: pointer;
+
+}
+
+.second-section
+.dg-clock
+.dg-clock-div:hover {
+  background: #f3f0f0;
+}
+
+.second-section
+.dg-clock
+.dg-clock-div
+.dg-clock-div-weather {
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+}
+
+.second-section
+.dg-clock
+.dg-clock-div
+.dg-clock-div-weather
+img
+{
+    width: 23.81px;
+}
+
+.second-section
+.dg-clock
+.dg-clock-div
+.dg {
+    margin-top: 0.4rem;
+    margin-bottom: 0.8rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #201C1C;
+}
+
+.second-section
+.dg-clock
+.dg-clock-div
+.clock {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #494343;
+}
+
+/*! @third-section */
+
+/*? text */
+
+.third-section
+.text {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #000000;
+  margin-top: 2.4rem;
+}
+
+.third-section
+.info {
+  margin-top: 1.6rem;
+  margin-bottom: 1.6rem;
+  display: flex;
+  align-items: center;
+  background: rgba(231, 117, 92, 0.13);
+  border-radius: 1.2rem;
+  padding: 1.6rem;
+}
+
+.third-section
+.info:hover {
+  background-color: rgba(231, 117, 92, 0.199);
+}
+
+.third-section
+.info
+.info-text {
+  margin-left: 1.6rem;
+  width: 22rem;
+}
+
+.third-section
+.info
+.info-text
+.info-text-head{
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #201C1C;
+  margin-bottom: 0.4rem;
+}
+
+.third-section
+.info
+.info-text
+.info-text-content {
+  font-size: 1.3rem;
+  font-weight:400;
+  color: #494343;
+}
+
+/*? weather-info */
+
+.third-section
+.weather-info {
+  display: flex;
+  justify-content: space-between;
+  background: #D2DFFF;
+  border-radius: 1.2rem;
+  margin-bottom: 1.2rem;
+  padding: 1.6rem;
+  cursor: pointer;
+ 
+}
+
+.third-section
+.weather-info:hover {
+  background-color: #bfcdf1;
+}
+
+.third-section
+.weather-info
+.weather-info-weather-city,
+.weather-info-dg {
+  display: flex;
+  align-items: center;
+}
+
+
+.third-section
+.weather-info
+.weather-info-weather-city,
+.weather-info-weather {
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  background-color: #9AB6FF;
+  border-radius: 2.5rem;
+}
+
+.third-section
+.weather-info
+.weather-info-weather-city
+.weather-info-city {
+  margin-left: 1.6rem;
+}
+
+.third-section
+.weather-info
+.weather-info-weather-city
+.weather-info-city
+.city {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #201C1C;
+  width: 9rem;
+  margin-bottom: 0.4rem;
+
+}
+
+.third-section
+.weather-info
+.weather-info-weather-city
+.weather-info-city
+.city-info {
+  font-size: 1.3rem;
+  font-family: 400;
+  color: #494343;
+  width: 9rem;
+}
+
+.third-section
+.weather-info
+.weather-info-dg 
+.dg-info {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #201C1C;
+  margin-right: 1.6rem;
+}
+
+/*! Second Page First Section */ 
+
+.bg {
+  position: absolute;
+  width: 100%;
+  height: 42.3%;
+  top: -0rem;
+  z-index: -1;
+  background: linear-gradient(118.25deg, #4F80FA 1.2%, #3764D7 59.26%, #335FD1 79.2%); 
+  /* background: white;  */
+}
+
+main {
+  background: transparent!important;
+}
+
+.second-page-first-section {
+  z-index: 1;
+}
+
+.second-page-first-section
+.city-location
+h6 {
+  color: #ffffff!important;
+}
+
+.second-page-first-section
+.city-location-search {
+  justify-content: space-between;
+}
+
+.second-page-first-section
+.date-clock-weather {
+  box-shadow: none;  
+  background: none;
+  border-radius: 0;
+  color: #FFFFFF;
+}
+
+.second-page-first-section
+.date-clock-weather:hover {
+  background: none;
+}
+
+.second-page-first-section
+.date-clock-weather
+.date-clock-weather-content {
+  justify-content: center;
+  align-items: center;
+}
+
+.second-page-first-section
+.date-clock{
+  justify-content: center!important;
+}
+
+.second-page-first-section
+.weather-degree {
+  flex-direction: column;
+}
+
+.second-page-first-section
+.weather-degree
+.weather {
+  justify-content: center;
+}
+
+.second-page-first-section
+.update-clock {
+  justify-content: center;
+}
+
+.second-page-first-section
+.weather-degree
+.degree {
+  margin-top: 1.6rem;
+  margin-bottom: 3.2rem;
+}
+
+.second-page-first-section
+.weather-degree
+.degree
+#degree {
+  margin-bottom: 0.4rem;
+}
+
+/*! second page third section */
+
+.second-page-third-section {
+  margin-top: 2.4rem;
+}
+
+.second-page-third-section
+.text {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #000000;
+}
+
+.second-page-third-section
+.health {
+  margin-top: 1.6rem;
+  margin-bottom: 1.5rem;
+  background:#FAFAFA;
+  border-radius: 1.2rem;
+  padding: 1.7rem 1.6rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.second-page-third-section
+.health
+.ellipse {
+  background: url(../img/Group\ 54.svg) no-repeat; 
+  background-size: cover;
+  width: 6.7rem;
+  height: 6.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2AA837;
+}
+
+.ellipse span{
+  padding: 2.3rem;
+}
+
+.second-page-third-section
+.health
+.health-info {
+  margin-left: 1.9rem;
+}
+
+.second-page-third-section
+.health
+.health-info
+.health-info-head {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #201c1c;
+  margin-bottom: 0.4rem;
+}
+
+.second-page-third-section
+.health
+.health-info
+.health-info-text {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #494343;
+  line-height: 1.8rem;
+}
+
+.second-page-third-section
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.second-page-third-section
+.info
+.humidity-air {
+  display: flex;
+  margin-bottom: 1.6rem;
+}
+
+.second-page-third-section
+.info
+.wind-fog {
+  display: flex;
+
+}
+
+.humidity,
+.air,
+.wind,
+.fog {
+  display: flex;
+  align-items: center;
+  background: #FAFAFA;
+  padding: 1.6rem;
+  /* width: 16.4rem; */
+  width: 100%;
+  border-radius: 1.2rem;
+}
+
+.air {
+  margin-left: 1.6rem;
+}
+
+.fog {
+  margin-left: 1.6rem;
+}
+
+.second-page-third-section
+.sum {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #201C1C;
+  margin-bottom: 0.4rem;
+}
+
+.second-page-third-section
+.name {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #494343;
+}
+
+.second-page-third-section
+.sum-name {
+  margin-left: 1.2rem;
+}
+
