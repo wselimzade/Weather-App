@@ -37,6 +37,39 @@ const returnDefaultPage = () => {
 weather.addEventListener("click", weatherInfo);
 returnArrow.addEventListener("click", returnDefaultPage);
 
-//! Slider weather menu for time
+//! Search input
 
+const searchIcon = document.querySelector("#search");
+const searchInput = document.querySelector(".search-input");
 
+const showSearchInput = () => {
+  searchInput.style.display = "flex";
+};
+
+searchIcon.addEventListener("click", showSearchInput);
+
+//! search button and close button click effect
+
+const button = document.querySelector(".search-start");
+const close = document.querySelector(".close");
+
+const clickEffectButton = () => {
+  button.classList.add("button-clicked");
+
+  setTimeout(function () {
+    button.classList.remove("button-clicked");
+    close.classList.remove("button-clicked");
+  }, 200);
+};
+
+const clickEffectClose = () => {
+  close.classList.add("button-clicked");
+
+  setTimeout(function () {
+    close.classList.remove("button-clicked");
+    searchInput.style.display = 'none'
+  }, 200);
+};
+
+button.addEventListener("click", clickEffectButton);
+close.addEventListener("click", clickEffectClose);

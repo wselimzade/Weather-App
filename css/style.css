@@ -327,7 +327,7 @@ p {
 .dg-clock-div-weather
 img
 {
-    width: 23.81px;
+    width: 4rem;
 }
 
 .second-section
@@ -436,11 +436,20 @@ img
 .weather-info
 .weather-info-weather-city,
 .weather-info-weather {
-  width: 4rem;
-  height: 4rem;
+  width: 4rem!important;
+  height: 4rem!important;
   display: flex;
   background-color: #9AB6FF;
   border-radius: 2.5rem;
+  padding: 0.4rem;
+}
+
+.third-section
+.weather-info
+.weather-info-weather-city,
+.weather-info-weather
+img {
+  width: 2.6rem;
 }
 
 .third-section
@@ -703,3 +712,68 @@ h6 {
   margin-left: 1.2rem;
 }
 
+/*! search input */
+
+.search-input {
+  margin-top: 1.6rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* display: none; */
+}
+
+.search-input
+#search-input {
+  width: 55%;
+  padding: 1rem;
+  border: none;
+  box-shadow: 0.2rem 0.2rem 0.2rem 0rem #1a325f8c;
+  color: #201C1C;
+  font-size: 1.2rem;
+  font-weight: 300;
+  border-radius: 0.5rem;
+}
+
+#search-input:focus {
+  border-bottom: 0.1rem solid #1d2723;
+}
+
+.search-start {
+  margin-left: 1.6rem;
+  padding: 1rem;
+  background-color: #335fd1;
+  color: #f3f0f0;
+  box-shadow: 0.2rem 0.2rem 0.2rem 0rem #1a325f8c;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  font-weight: 300;
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+
+.search-start:hover{
+  background-color: #2548a1;
+}
+
+.button-clicked {
+  transform: scale(0.95);
+  opacity: 0.8;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.close {
+  font-size: 1rem;
+  box-shadow: 0.2rem 0.2rem 0.2rem 0rem #1a325f8c;
+  margin-left: 1rem;
+  padding: 1rem;
+  background-color: #f3dfdf;
+  color: white;
+  transition: .3s all;
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+
+.close:hover {
+  background-color: #5a0404;
+}
