@@ -39,13 +39,4 @@ returnArrow.addEventListener("click", returnDefaultPage);
 
 //! Slider weather menu for time
 
-const scrollbarThumb = document.querySelector('.second-section .dg-clock::-webkit-scrollbar-thumb');
-
-scrollbarThumb.addEventListener('mouseenter', function() {
-  scrollbarThumb.style.cursor = 'pointer';
-});
-
-scrollbarThumb.addEventListener('mouseleave', function() {
-  scrollbarThumb.style.cursor = 'auto';
-});
 
