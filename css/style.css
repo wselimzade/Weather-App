@@ -720,7 +720,7 @@ h6 {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* display: none; */
+  display: none;
 }
 
 .search-input

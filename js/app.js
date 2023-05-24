@@ -67,7 +67,7 @@ const clickEffectClose = () => {
 
   setTimeout(function () {
     close.classList.remove("button-clicked");
-    searchInput.style.display = 'none'
+    searchInput.style.display = "none";
   }, 200);
 };
 
