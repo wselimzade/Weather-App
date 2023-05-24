@@ -728,7 +728,7 @@ h6 {
   width: 55%;
   padding: 1rem;
   border: none;
-  box-shadow: 0.2rem 0.2rem 0.2rem 0rem #1a325f8c;
+  box-shadow: 0.2rem 0.2rem 0.2rem 0rem rgba(26, 50, 95, 0.549);
   color: #201C1C;
   font-size: 1.2rem;
   font-weight: 300;
