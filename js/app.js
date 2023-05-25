@@ -97,7 +97,8 @@ let API;
 button.addEventListener("click", () => {
   if (searchBar.value != "") {
     requestApi(searchBar.value);
-  }
+  } 
+  alertError.style.display = "none";
 });
 
 //? location button
