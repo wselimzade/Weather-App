@@ -21,7 +21,7 @@
             <div class="location">
               <img src="img/location.svg" id="location" />
             </div>
-            <h6>Azerbaijan, Baku</h6>
+            <h6 class="city-country">_</h6>
             <div class="arrow-down">
               <img src="img/arrow-down.svg" id="arrow-down" />
             </div>
@@ -34,14 +34,24 @@
 
         <!-- ? search input -->
         <div class="search-input">
-          <input type="search" id="search-input" placeholder="..write and search" />
-          <button class="search-start" value="search">
-            search
-          </button>
-          <button class="close" value="close">
-            x
-          </button>
+          <div class="search-input-buttons">
+            <input
+              type="search"
+              id="search-input"
+              placeholder="..write and search"
+            />
+            <button class="search-start" value="search">search</button>
+            <button class="current-location" value="location">
+              <img src="img/location-svgrepo-com.svg" id="first-section">
+            </button>
+            <button class="close" value="close">×</button>
+          </div>
+          <div>
+            <p id="alert"></p>
+          </div>
         </div>
+
+        <!-- ? alert -->
 
         <!--? date-clock-weather -->
 
@@ -53,11 +63,11 @@
             </div>
             <div class="weather-degree">
               <div class="weather">
-                <img src="img/weather.svg" id="weather" />
+                <img src="" id="weather" class="first-section-weather" />
               </div>
               <div class="degree">
-                <span id="degree">18º C</span>
-                <span id="weather-type">Cloudy Rain</span>
+                <span id="degree">_</span>
+                <span id="weather-type">_</span>
               </div>
             </div>
             <div class="update-clock">
@@ -83,7 +93,7 @@
             <img src="img/arrow-left.svg" id="arrow-left" />
           </div>
           <div class="city-location">
-            <h6>Azerbaijan, Baku</h6>
+            <h6 class="city-country">_</h6>
           </div>
 
           <div class="search">
@@ -102,11 +112,11 @@
             </div>
             <div class="weather-degree">
               <div class="weather">
-                <img src="img/weather.svg" id="weather" />
+                <img src="" id="weather" class="first-section-weather"/>
               </div>
               <div class="degree">
-                <span id="degree">18º C</span>
-                <span id="weather-type">Cloudy Rain</span>
+                <span id="degree">_</span>
+                <span id="weather-type">_</span>
               </div>
             </div>
             <div class="update-clock">
@@ -429,7 +439,7 @@
                 <img src="img/humidty.svg" />
               </div>
               <div class="sum-name">
-                <div class="sum">86%</div>
+                <div class="sum" id="humidity-sum">_</div>
                 <div class="name">Humidty</div>
               </div>
             </div>
@@ -439,8 +449,8 @@
                 <img src="img/air.svg" />
               </div>
               <div class="sum-name">
-                <div class="sum">940 hPa</div>
-                <div class="name">Air</div>
+                <div class="sum" id="air-sum">_</div>
+                <div class="name">Pressure</div>
               </div>
             </div>
           </div>
@@ -451,7 +461,7 @@
                 <img src="img/wind.svg" />
               </div>
               <div class="sum-name">
-                <div class="sum">1 km/h</div>
+                <div class="sum" id="wind-sum">_</div>
                 <div class="name">Wind</div>
               </div>
             </div>
@@ -461,7 +471,7 @@
                 <img src="img/fog.svg" />
               </div>
               <div class="sum-name">
-                <div class="sum">14%</div>
+                <div class="sum" id="fog-sum">14%</div>
                 <div class="name">Fog</div>
               </div>
             </div>

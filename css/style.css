@@ -717,10 +717,15 @@ h6 {
 .search-input {
   margin-top: 1.6rem;
   width: 100%;
+  display: none;
+
+}
+
+.search-input
+.search-input-buttons {
   display: flex;
   justify-content: center;
   align-items: center;
-  display: none;
 }
 
 .search-input
@@ -763,13 +768,37 @@ h6 {
   transition: transform 0.2s, opacity 0.2s;
 }
 
+.search-input
+.current-location {
+  margin-left: 1rem;
+  padding: 0.7rem;
+  color: #f3f0f0;
+  box-shadow: 0.2rem 0.2rem 0.2rem 0rem #1a325f8c;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  font-weight: 300;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.current-location img {
+  width: 1rem;
+}
+
+.current-location:hover {
+  background-color: #dddddd;
+}
+
 .close {
   font-size: 1rem;
   box-shadow: 0.2rem 0.2rem 0.2rem 0rem #1a325f8c;
   margin-left: 1rem;
   padding: 0.7rem;
   background-color: #f3dfdf;
-  color: white;
+  color: #201C1C;
   transition: .3s all;
   cursor: pointer;
   border-radius: 0.5rem;
@@ -777,4 +806,18 @@ h6 {
 
 .close:hover {
   background-color: #5a0404;
+  color: #f3f0f0;
+}
+
+/*! alert */
+
+#alert {
+  width: 100%;
+  margin-top: 1.6rem;
+  padding: 1rem;
+  text-align: center;
+  color: #FAFAFA;
+  background-color: #da4646;
+  display: none;
+  transition: .5s all;
 }
