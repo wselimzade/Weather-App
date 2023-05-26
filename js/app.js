@@ -83,7 +83,7 @@ button.addEventListener("click", clickEffectButton);
 close.addEventListener("click", clickEffectClose);
 currentLocation.addEventListener("click", clickEffectLocation);
 
-//! Weather API
+//! Weather API Current Data
 
 const main = document.querySelector("main");
 
@@ -97,7 +97,7 @@ let API;
 button.addEventListener("click", () => {
   if (searchBar.value != "") {
     requestApi(searchBar.value);
-  } 
+  }
   alertError.style.display = "none";
 });
 
@@ -230,3 +230,149 @@ function weatherDetails(info) {
   }
   console.log(info);
 }
+
+//! Date, Hour
+
+const date = firstSection.querySelector(".date");
+const clock = firstSection.querySelector(".clock");
+const sDate = secondPageFirstSection.querySelector(".date");
+const sClock = secondPageFirstSection.querySelector(".clock");
+
+// this function create current date
+const newDate = new Date();
+
+// week day
+let weekDay = newDate.getDay();
+// day
+let day = newDate.getDate();
+// month
+let month = newDate.getMonth();
+// year
+let year = newDate.getFullYear();
+
+// getMonth value converter Months' name
+switch (month) {
+  case 0:
+    month = "January";
+    break;
+  case 1:
+    month = "February";
+    break;
+  case 2:
+    month = "March";
+    break;
+  case 3:
+    month = "April";
+    break;
+  case 4:
+    month = "May";
+    break;
+  case 5:
+    month = "June";
+    break;
+  case 6:
+    month = "July";
+    break;
+  case 7:
+    month = "August";
+    break;
+  case 8:
+    month = "September";
+    break;
+  case 9:
+    month = "October";
+    break;
+  case 10:
+    month = "November";
+    break;
+  case 11:
+    month = "December";
+    break;
+  default:
+    alert("Allow the app to use your phone's date and time");
+    break;
+}
+
+// getDay value converter Day's name
+switch (weekDay) {
+  case 0:
+    weekDay = "Sunday";
+    break;
+  case 1:
+    weekDay = "Monday";
+    break;
+  case 2:
+    weekDay = "Thusday";
+    break;
+  case 3:
+    weekDay = "Wendesday";
+    break;
+  case 4:
+    weekDay = "Thursday";
+    break;
+  case 5:
+    weekDay = "Friday";
+    break;
+  case 6:
+    weekDay = "Saturday";
+    break;
+  default:
+    alert("Allow the app to use your phone's date and time");
+    break;
+}
+
+//? Time
+
+let hour, minutes, part, clockText;
+
+//?* Default time value
+hour = newDate.getHours();
+minutes = newDate.getMinutes();
+
+// PM or AM
+if (hour >= 12 && hour <= 24) {
+  part = "PM";
+} else {
+  part = "AM";
+}
+
+// add minutes before "0" if minut value = 0~9
+if (minutes < 10) {
+  minutes = "0" + minutes;
+}
+
+clockText = clock.innerText = `${hour}.${minutes} ${part}`;
+sClock.innerText = clockText;
+
+//* update time per minute
+setInterval(() => {
+  const newDateTime = new Date();
+  hour = newDateTime.getHours();
+  minutes = newDateTime.getMinutes();
+
+  // PM or AM
+  if (hour >= 12 && hour <= 24) {
+    part = "PM";
+  } else {
+    part = "AM";
+  }
+
+  // add minutes before "0" if minut value = 0~9
+  if (minutes < 10) {
+    minutes = "0" + minutes;
+  }
+
+  clockText = clock.innerText = `${hour}.${minutes} ${part}`;
+  sClock.innerText = clockText;
+}, 1000);
+
+let dateText = (date.innerText = `${weekDay}, ${day} ${month} ${year}`);
+sDate.innerText = dateText;
+
+//! last update time
+
+const lastUpdate = firstSection.querySelector(".last-update");
+const sLastUpdate = secondPageFirstSection.querySelector(".last-update");
+
+lastUpdate.innerText = `Last updated ${clockText}`;
+sLastUpdate.innerText = `Last updated ${clockText}`;
