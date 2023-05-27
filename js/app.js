@@ -178,57 +178,63 @@ function weatherDetails(info) {
     secondPageThirdSection.querySelector(
       "#air-sum"
     ).innerText = `${pressure} hPa`;
-
-    if (fog == undefined) {
-      secondPageThirdSection.querySelector("#fog-sum").innerText = "-";
-    } else {
-      secondPageThirdSection.querySelector("#fog-sum").innerText = `${fog}%`;
-    }
+    secondPageThirdSection.querySelector("#fog-sum").innerText =
+      fog === undefined ? "-" : `${fog}%`;
 
     //? weather icons for different temprature
     if (id === 800) {
       let clear = "01d";
       wIcon.src = `https://openweathermap.org/img/w/${clear}.png`;
       wsIcon.src = `https://openweathermap.org/img/w/${clear}.png`;
-    } else if ((id) => 200 && id <= 232) {
+    } else if (id >= 200 && id <= 232) {
       let thunderstorm = "11d";
       wIcon.src = `https://openweathermap.org/img/w/${thunderstorm}.png`;
       wsIcon.src = `https://openweathermap.org/img/w/${thunderstorm}.png`;
-    } else if ((id) => 300 && id <= 321) {
+    } else if (id >= 300 && id <= 321) {
       let drizzle = "09d";
       wIcon.src = `https://openweathermap.org/img/w/${drizzle}.png`;
       wsIcon.src = `https://openweathermap.org/img/w/${drizzle}.png`;
-    } else if ((id) => 500 && id <= 504) {
-      if ((id) => 500 && id < 504) {
-        let rain = "10d";
+    } else if (id >= 500 && id <= 504) {
+      let rain = "";
+      if (id >= 500 && id < 504) {
+        rain = "10d";
       } else if (id === 511) {
-        let rain = "13d";
+        rain = "13d";
       } else {
-        let rain = "09d";
+        rain = "09d";
       }
       wIcon.src = `https://openweathermap.org/img/w/${rain}.png`;
       wsIcon.src = `https://openweathermap.org/img/w/${rain}.png`;
-    } else if ((id) => 600 && id <= 622) {
+    } else if (id >= 600 && id <= 622) {
       let snow = "13d";
       wIcon.src = `https://openweathermap.org/img/w/${snow}.png`;
       wsIcon.src = `https://openweathermap.org/img/w/${snow}.png`;
-    } else if ((id) => 701 && id <= 781) {
+    } else if (id >= 701 && id <= 781) {
       let atmosphere = "50d";
       wIcon.src = `https://openweathermap.org/img/w/${atmosphere}.png`;
       wsIcon.src = `https://openweathermap.org/img/w/${atmosphere}.png`;
-    } else if ((id) => 801 && id <= 804) {
+    } else if (id >= 801 && id <= 804) {
+      let clouds = "";
       if (id === 801) {
-        let clouds = "02d";
+        clouds = "02d";
       } else if (id === 802) {
-        let clouds = "03d";
+        clouds = "03d";
       } else {
-        let clouds = "04d";
+        clouds = "04d";
       }
       wIcon.src = `https://openweathermap.org/img/w/${clouds}.png`;
       wsIcon.src = `https://openweathermap.org/img/w/${clouds}.png`;
     }
   }
   console.log(info);
+}
+
+window.onload = () => {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(onSucces, onError);
+  } else {
+    console.log("INVALID");
+  }
 }
 
 //! Date, Hour
@@ -251,74 +257,42 @@ let month = newDate.getMonth();
 let year = newDate.getFullYear();
 
 // getMonth value converter Months' name
-switch (month) {
-  case 0:
-    month = "January";
-    break;
-  case 1:
-    month = "February";
-    break;
-  case 2:
-    month = "March";
-    break;
-  case 3:
-    month = "April";
-    break;
-  case 4:
-    month = "May";
-    break;
-  case 5:
-    month = "June";
-    break;
-  case 6:
-    month = "July";
-    break;
-  case 7:
-    month = "August";
-    break;
-  case 8:
-    month = "September";
-    break;
-  case 9:
-    month = "October";
-    break;
-  case 10:
-    month = "November";
-    break;
-  case 11:
-    month = "December";
-    break;
-  default:
-    alert("Allow the app to use your phone's date and time");
-    break;
+const monthNames = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+if (month >= 0 && month <= 11) {
+  month = monthNames[month];
+} else {
+  alert("Allow the app to use your phone's date and time");
 }
 
 // getDay value converter Day's name
-switch (weekDay) {
-  case 0:
-    weekDay = "Sunday";
-    break;
-  case 1:
-    weekDay = "Monday";
-    break;
-  case 2:
-    weekDay = "Thusday";
-    break;
-  case 3:
-    weekDay = "Wendesday";
-    break;
-  case 4:
-    weekDay = "Thursday";
-    break;
-  case 5:
-    weekDay = "Friday";
-    break;
-  case 6:
-    weekDay = "Saturday";
-    break;
-  default:
-    alert("Allow the app to use your phone's date and time");
-    break;
+const weekDaysNames = [
+  "Sunday",
+  "Monday",
+  "Thuesday",
+  "Wendesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+
+if (weekDay >= 0 && weekDay <= 6) {
+  weekDay = weekDaysNames[weekDay];
+} else {
+  alert("Allow the app to use your phone's date and time");
 }
 
 //? Time
