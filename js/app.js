@@ -229,13 +229,20 @@ function weatherDetails(info) {
   console.log(info);
 }
 
+//? when open the App showing recently data
 window.onload = () => {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(onSucces, onError);
-  } else {
-    console.log("INVALID");
+    alertError.style.display = "none!important";
   }
-}
+
+  function onError() {
+    alert(
+      "Please share your location information with the application to get the data based on the current location."
+    );
+    alertError.style.display = "none!important";
+  }
+};
 
 //! Date, Hour
 
