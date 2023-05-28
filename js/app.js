@@ -92,6 +92,8 @@ let alertError = document.querySelector("#alert");
 
 let apiKey = "3916b6165d316713f49d8aae73379ad0";
 let API;
+let hourlyAPI;
+let dailyAPI;
 
 //? search button
 button.addEventListener("click", () => {
@@ -114,6 +116,9 @@ currentLocation.addEventListener("click", () => {
 function onSucces(position) {
   const { latitude, longitude } = position.coords;
   API = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
+  hourlyAPI = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=metric&cnt=10&appid=${apiKey}`;
+  dailyAPI = `https://api.openweathermap.org/data/2.5/daily?lat=${latitude}&lon=${longitude}&units=metric&cnt=10&appid=${apiKey}`;
+
   fetchData();
 }
 
@@ -126,6 +131,8 @@ function onError(error) {
 //? Weather data for city name
 function requestApi(city) {
   API = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+  hourlyAPI = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&cnt=10&units=metric&appid=${apiKey}`;
+  dailyAPI = `https://api.openweathermap.org/data/2.5/daily?q=${city}&cnt=10&units=metric&appid=${apiKey}`;
   fetchData();
 }
 
@@ -134,11 +141,100 @@ function fetchData() {
   fetch(API)
     .then((response) => response.json())
     .then((result) => weatherDetails(result));
+
+  fetch(hourlyAPI)
+    .then((response) => response.json())
+    .then((result) => hourlyDetails(result));
+
+  fetch(dailyAPI)
+    .then((response) => response.json())
+    .then((result) => dailyDetails(result));
 }
 
 //? weather data details
 const wIcon = firstSection.querySelector(".first-section-weather");
 const wsIcon = secondPageFirstSection.querySelector(".first-section-weather");
+
+function dailyDetails(dInfo) {
+  //? warning, if input false value
+
+  if (dInfo.cod == "404") {
+    alertError.style.display = "block";
+    alertError.innerText = `${searchBar.value} city was not found...`;
+  } else {
+    console.log(dInfo);
+  }
+}
+
+function hourlyDetails(hInfo) {
+  //? warning, if input false value
+  if (hInfo.cod == "404") {
+    alertError.style.display = "block";
+    alertError.innerText = `${searchBar.value} city was not found...`;
+  } else {
+    const dg = document.querySelectorAll(".dg");
+    const clock = document.querySelectorAll(".hClock");
+    const hWIcon = document.querySelectorAll(".hImage");
+    const hourlyData = hInfo.list;
+
+    for (let i = 0; i < 9; i++) {
+      let hpart;
+      let hId = hInfo.list[i].weather[0].id;
+      let hWIconArr = hWIcon[i];
+      if (
+        hourlyData[i].dt_txt.split(" ")[1].slice(0, 5)[0] == 0 &&
+        hourlyData[i].dt_txt.split(" ")[1].slice(0, 5) !== "00:00"
+      ) {
+        hpart = "AM";
+      } else {
+        hpart = "PM";
+      }
+      dg[i].innerText = `${Math.floor(hourlyData[i].main.temp)}º`;
+      clock[i].innerText = `${hourlyData[i].dt_txt
+        .split(" ")[1]
+        .slice(0, 5)} ${hpart}`;
+
+      if (hId === 800) {
+        let clear = "01d";
+        hWIconArr.src = `https://openweathermap.org/img/w/${clear}.png`;
+      } else if (hId >= 200 && hId <= 232) {
+        let thunderstorm = "11d";
+        hWIconArr.src = `https://openweathermap.org/img/w/${thunderstorm}.png`;
+      } else if (hId >= 300 && hId <= 321) {
+        let drizzle = "09d";
+        hWIconArr.src = `https://openweathermap.org/img/w/${drizzle}.png`;
+      } else if (hId >= 500 && hId <= 504) {
+        let rain = "";
+        if (hId >= 500 && hId < 504) {
+          rain = "10d";
+        } else if (hId === 511) {
+          rain = "13d";
+        } else {
+          rain = "09d";
+        }
+        hWIconArr.src = `https://openweathermap.org/img/w/${rain}.png`;
+      } else if (hId >= 600 && hId <= 622) {
+        let snow = "13d";
+        hWIconArr.src = `https://openweathermap.org/img/w/${snow}.png`;
+      } else if (hId >= 701 && hId <= 781) {
+        let atmosphere = "50d";
+        hWIconArr.src = `https://openweathermap.org/img/w/${atmosphere}.png`;
+      } else if (hId >= 801 && hId <= 804) {
+        let clouds = "";
+        if (hId === 801) {
+          clouds = "02d";
+        } else if (hId === 802) {
+          clouds = "03d";
+        } else {
+          clouds = "04d";
+        }
+        hWIconArr.src = `https://openweathermap.org/img/w/${clouds}.png`;
+      }
+    }
+  }
+
+  console.log(hInfo);
+}
 
 function weatherDetails(info) {
   //? warning, if input false value
@@ -243,6 +339,8 @@ window.onload = () => {
     alertError.style.display = "none!important";
   }
 };
+
+//! Weather API hourly data
 
 //! Date, Hour
 
