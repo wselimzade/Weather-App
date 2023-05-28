@@ -117,7 +117,7 @@ function onSucces(position) {
   const { latitude, longitude } = position.coords;
   API = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
   hourlyAPI = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=metric&cnt=10&appid=${apiKey}`;
-  dailyAPI = `https://api.openweathermap.org/data/2.5/daily?lat=${latitude}&lon=${longitude}&units=metric&cnt=10&appid=${apiKey}`;
+  dailyAPI = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${latitude}&lon=${longitude}&cnt=7&units=metric&cnt=10&appid=${apiKey}`;
 
   fetchData();
 }
@@ -132,7 +132,7 @@ function onError(error) {
 function requestApi(city) {
   API = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
   hourlyAPI = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&cnt=10&units=metric&appid=${apiKey}`;
-  dailyAPI = `https://api.openweathermap.org/data/2.5/daily?q=${city}&cnt=10&units=metric&appid=${apiKey}`;
+  dailyAPI = `https://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&cnt=7&units=metric&appid=${apiKey}`;
   fetchData();
 }
 
@@ -159,8 +159,7 @@ function dailyDetails(dInfo) {
   //? warning, if input false value
 
   if (dInfo.cod == "404") {
-    alertError.style.display = "block";
-    alertError.innerText = `${searchBar.value} city was not found...`;
+    alert("daily data is don't found")
   } else {
     console.log(dInfo);
   }
@@ -169,8 +168,7 @@ function dailyDetails(dInfo) {
 function hourlyDetails(hInfo) {
   //? warning, if input false value
   if (hInfo.cod == "404") {
-    alertError.style.display = "block";
-    alertError.innerText = `${searchBar.value} city was not found...`;
+    alert("hourly data is don't found")
   } else {
     const dg = document.querySelectorAll(".dg");
     const clock = document.querySelectorAll(".hClock");
