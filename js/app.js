@@ -159,7 +159,7 @@ function dailyDetails(dInfo) {
   //? warning, if input false value
 
   if (dInfo.cod == "404") {
-    alert("daily data is don't found")
+    alert("daily data is don't found");
   } else {
     console.log(dInfo);
   }
@@ -168,7 +168,7 @@ function dailyDetails(dInfo) {
 function hourlyDetails(hInfo) {
   //? warning, if input false value
   if (hInfo.cod == "404") {
-    alert("hourly data is don't found")
+    console.log("hourly data is don't found");
   } else {
     const dg = document.querySelectorAll(".dg");
     const clock = document.querySelectorAll(".hClock");
@@ -280,41 +280,95 @@ function weatherDetails(info) {
       let clear = "01d";
       wIcon.src = `https://openweathermap.org/img/w/${clear}.png`;
       wsIcon.src = `https://openweathermap.org/img/w/${clear}.png`;
-    } else if (id >= 200 && id <= 232) {
+      let color =
+        "linear-gradient(104deg, rgba(222,203,174,1) 9%, rgba(79,155,170,1) 100%)";
+      weather.style.background = color;
+      defaultBackground.style.background = color;
+    }
+    // thunderstrom
+    else if (id >= 200 && id <= 232) {
       let thunderstorm = "11d";
       wIcon.src = `https://openweathermap.org/img/w/${thunderstorm}.png`;
       wsIcon.src = `https://openweathermap.org/img/w/${thunderstorm}.png`;
-    } else if (id >= 300 && id <= 321) {
+      let color = "linear-gradient(104.02deg, #4C4E53 9.87%, #0B1223 98.3%)";
+      weather.style.background = color;
+      defaultBackground.style.background = color;
+    }
+    // drizzle
+    else if (id >= 300 && id <= 321) {
       let drizzle = "09d";
       wIcon.src = `https://openweathermap.org/img/w/${drizzle}.png`;
       wsIcon.src = `https://openweathermap.org/img/w/${drizzle}.png`;
-    } else if (id >= 500 && id <= 504) {
+      let color =
+        "linear-gradient(104deg, rgba(213,210,207,1) 9%, rgba(52,97,121,1) 100%)";
+      weather.style.background = color;
+      defaultBackground.style.background = color;
+    }
+    // rain
+    else if (id >= 500 && id <= 531) {
       let rain = "";
       if (id >= 500 && id < 504) {
         rain = "10d";
+        let color =
+          "linear-gradient(104deg, rgba(213,210,207,1) 9%, rgba(157,101,65,1) 100%)";
+        weather.style.background = color;
+        defaultBackground.style.background = color;
       } else if (id === 511) {
         rain = "13d";
+        let color =
+          "linear-gradient(104deg, rgba(251,246,242,1) 9%, rgba(61,155,204,1) 100%)";
+        weather.style.background = color;
+        defaultBackground.style.background = color;
       } else {
         rain = "09d";
+        let color =
+          "linear-gradient(104deg, rgba(213,210,207,1) 9%, rgba(52,97,121,1) 100%)";
+        weather.style.background = color;
+        defaultBackground.style.background = color;
       }
       wIcon.src = `https://openweathermap.org/img/w/${rain}.png`;
       wsIcon.src = `https://openweathermap.org/img/w/${rain}.png`;
-    } else if (id >= 600 && id <= 622) {
+    }
+    // snow
+    else if (id >= 600 && id <= 622) {
       let snow = "13d";
       wIcon.src = `https://openweathermap.org/img/w/${snow}.png`;
       wsIcon.src = `https://openweathermap.org/img/w/${snow}.png`;
-    } else if (id >= 701 && id <= 781) {
+      let color =
+        "linear-gradient(104deg, rgba(251,246,242,1) 9%, rgba(61,155,204,1) 100%)";
+      weather.style.background = color;
+      defaultBackground.style.background = color;
+    }
+    // atmosphere
+    else if (id >= 701 && id <= 781) {
       let atmosphere = "50d";
       wIcon.src = `https://openweathermap.org/img/w/${atmosphere}.png`;
       wsIcon.src = `https://openweathermap.org/img/w/${atmosphere}.png`;
-    } else if (id >= 801 && id <= 804) {
+      let color =
+        "linear-gradient(104deg,rgba(177, 180, 191, 1) 9%,rgba(59, 58, 68, 1) 100%)";
+      weather.style.background = color;
+      defaultBackground.style.background = color;
+    }
+    // clouds
+    else if (id >= 801 && id <= 804) {
       let clouds = "";
       if (id === 801) {
         clouds = "02d";
+        let color =
+          "linear-gradient(104deg, rgba(214,186,159,1) 9%, rgba(66,56,47,1) 100%)";
+        weather.style.background = color;
+        defaultBackground.style.background = color;
       } else if (id === 802) {
         clouds = "03d";
+        let color = "104deg, rgba(215,218,227,1) 9%, rgba(115,114,122,1) 100%";
+        weather.style.background = color;
+        defaultBackground.style.background = color;
       } else {
         clouds = "04d";
+        let color =
+          "linear-gradient(104deg,rgb(193, 196, 204) 9%,rgb(104, 103, 109) 100%";
+        weather.style.background = color;
+        defaultBackground.style.background = color;
       }
       wIcon.src = `https://openweathermap.org/img/w/${clouds}.png`;
       wsIcon.src = `https://openweathermap.org/img/w/${clouds}.png`;
@@ -346,6 +400,8 @@ const date = firstSection.querySelector(".date");
 const clock = firstSection.querySelector(".clock");
 const sDate = secondPageFirstSection.querySelector(".date");
 const sClock = secondPageFirstSection.querySelector(".clock");
+
+const WeekDayName = thirdSection.querySelectorAll(".weekDay");
 
 // this function create current date
 const newDate = new Date();
@@ -390,10 +446,22 @@ const weekDaysNames = [
   "Thursday",
   "Friday",
   "Saturday",
+  "Sunday",
+  "Monday",
+  "Thuesday",
+  "Wendesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
 ];
 
+let weekDayValue;
 if (weekDay >= 0 && weekDay <= 6) {
-  weekDay = weekDaysNames[weekDay];
+  weekDayValue = weekDaysNames[weekDay];
+  for (let i = 0; i <= 5; i++) {
+    let j = i + 1;
+    WeekDayName[i].innerText = weekDaysNames[weekDay + j];
+  }
 } else {
   alert("Allow the app to use your phone's date and time");
 }
@@ -422,28 +490,31 @@ clockText = clock.innerText = `${hour}.${minutes} ${part}`;
 sClock.innerText = clockText;
 
 //* update time per minute
-setInterval(() => {
-  const newDateTime = new Date();
-  hour = newDateTime.getHours();
-  minutes = newDateTime.getMinutes();
+UpdateTime();
+function UpdateTime() {
+  setInterval(() => {
+    const newDateTime = new Date();
+    hour = newDateTime.getHours();
+    minutes = newDateTime.getMinutes();
 
-  // PM or AM
-  if (hour >= 12 && hour <= 24) {
-    part = "PM";
-  } else {
-    part = "AM";
-  }
+    // PM or AM
+    if (hour >= 12 && hour <= 24) {
+      part = "PM";
+    } else {
+      part = "AM";
+    }
 
-  // add minutes before "0" if minut value = 0~9
-  if (minutes < 10) {
-    minutes = "0" + minutes;
-  }
+    // add minutes before "0" if minut value = 0~9
+    if (minutes < 10) {
+      minutes = "0" + minutes;
+    }
 
-  clockText = clock.innerText = `${hour}.${minutes} ${part}`;
-  sClock.innerText = clockText;
-}, 1000);
+    clockText = clock.innerText = `${hour}.${minutes} ${part}`;
+    sClock.innerText = clockText;
+  }, 1000);
+}
 
-let dateText = (date.innerText = `${weekDay}, ${day} ${month} ${year}`);
+let dateText = (date.innerText = `${weekDayValue}, ${day} ${month} ${year}`);
 sDate.innerText = dateText;
 
 //! last update time

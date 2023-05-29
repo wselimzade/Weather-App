@@ -145,6 +145,8 @@ p {
 .date-clock-weather
 .date-clock-weather-content {
     padding: 2.4rem;
+    border-radius: 12px;
+
     width: 100%;
     height: 100%;
 }
@@ -463,7 +465,7 @@ img {
 .weather-info
 .weather-info-weather-city
 .weather-info-city
-.city {
+.weekDay {
   font-size: 1.4rem;
   font-weight: 600;
   color: #201C1C;
@@ -476,7 +478,7 @@ img {
 .weather-info
 .weather-info-weather-city
 .weather-info-city
-.city-info {
+.weekDay-info {
   font-size: 1.3rem;
   font-family: 400;
   color: #494343;
@@ -486,7 +488,7 @@ img {
 .third-section
 .weather-info
 .weather-info-dg 
-.dg-info {
+.weekDay-dg-info {
   font-size: 1.4rem;
   font-weight: 600;
   color: #201C1C;
