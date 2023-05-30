@@ -357,7 +357,7 @@ function weatherDetails(info) {
       if (id === 801) {
         clouds = "02d";
         let color =
-          "linear-gradient(104deg, rgba(214,186,159,1) 9%, rgba(66,56,47,1) 100%)";
+          "linear-gradient(104deg, rgba(235,178,92,1) 9%, rgba(149,238,255,1) 100%)";
         weather.style.background = color;
         defaultBackground.style.background = color;
       } else if (id === 802) {
