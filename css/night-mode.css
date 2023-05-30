@@ -16,9 +16,9 @@ body {
 /*? date-clock-weather */
 
 .first-section .date-clock-weather {
-  background: linear-gradient(101.56deg, #4f7ffa 17.75%, #335fd1 84.8%);
+  /* background: linear-gradient(101.56deg, #4f7ffa 17.75%, #335fd1 84.8%); */
   color: #ffffff;
-  box-shadow: 0px 4px 40px rgba(86, 102, 141, 0.4);
+  /* box-shadow: 0px 4px 40px rgba(86, 102, 141, 0.4); */
   border-radius: 12px;
   width: 100%;
 }
@@ -26,6 +26,8 @@ body {
 .first-section .date-clock-weather:hover {
   background: linear-gradient(101.56deg, #496bc2 17.75%, #3556aa 84.8%);
 }
+
+
 
 /*! @second-section */
 
@@ -174,6 +176,4 @@ body {
   color: #f3dfdf;
   background-color: #7c2525;
 }
-
-
 
