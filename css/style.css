@@ -752,6 +752,7 @@ h6 {
 }
 
 .search-start {
+  height: 2.4rem;
   margin-left: 1.6rem;
   padding: 0.7rem;
   background-color: #335fd1;
@@ -762,6 +763,7 @@ h6 {
   font-weight: 300;
   cursor: pointer;
   border-radius: 0.5rem;
+  text-align: center;
 }
 
 .search-start:hover{
@@ -776,6 +778,8 @@ h6 {
 
 .search-input
 .current-location {
+  height: 2.4rem;
+
   margin-left: 1rem;
   padding: 0.7rem;
   color: #f3f0f0;
@@ -799,6 +803,7 @@ h6 {
 }
 
 .close {
+  height: 2.4rem;
   font-size: 1rem;
   box-shadow: 0.2rem 0.2rem 0.2rem 0rem #1a325f8c;
   margin-left: 1rem;
