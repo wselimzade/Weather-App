@@ -122,7 +122,7 @@ function onSucces(position) {
   dailyAPI = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&cnt=7&units=metric&cnt=10&appid=${apiKey}`;
 
   fetchData();
-  alertError.style.display = "none"
+  alertError.style.display = "none";
 }
 
 //? currentlocation don't allow
@@ -533,33 +533,31 @@ sLastUpdate.innerText = `Last updated ${clockText}`;
 const lamp = document.querySelector("#lamp");
 const nightLink = document.getElementsByTagName("link")[1];
 
-const locationIcon = document.querySelector("#location")
-const searchIcontheme = document.querySelector("#search")
+const locationIcon = document.querySelector("#location");
+const searchIcontheme = document.querySelector("#search");
 
-const locationSearch = document.querySelector("#location-search") 
+const locationSearch = document.querySelector("#location-search");
 
 function changeTheme() {
   if (nightLink.getAttribute("href") === "") {
     nightLink.setAttribute("href", "./css/night-mode.css");
-    lamp.src = "img/light.svg";
-    lamp.style.padding = "0.2rem";
-    lamp.style.backgroundColor = "white";
-    lamp.style.borderRadius = "1.5rem";
-    locationIcon.src = 'img/nightMode-location.svg'
-    searchIcontheme.src = 'img/nightMode-search.svg'
-    locationSearch.src = 'img/nightMode-location.svg'
+    lamp.src = "img/lightOff.png";
+    // lamp.style.padding = "0.2rem";
+    // lamp.style.backgroundColor = "white";
+    // lamp.style.borderRadius = "1.5rem";
+    locationIcon.src = "img/nightMode-location.svg";
+    searchIcontheme.src = "img/nightMode-search.svg";
+    locationSearch.src = "img/nightMode-location.svg";
   } else {
     nightLink.href = "";
-    lamp.src = 'img/dark.svg'
+    lamp.src = "img/lightON.png";
     lamp.style.padding = "";
     lamp.style.backgroundColor = "";
     lamp.style.borderRadius = "";
-    locationIcon.src = 'img/location.svg'
-    searchIcontheme.src = 'img/search.svg'
-    locationSearch.src = 'img/location-svgrepo-com.svg'
-
+    locationIcon.src = "img/location.svg";
+    searchIcontheme.src = "img/search.svg";
+    locationSearch.src = "img/location-svgrepo-com.svg";
   }
 }
 
 lamp.addEventListener("click", changeTheme);
-
