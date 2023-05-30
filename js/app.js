@@ -122,6 +122,7 @@ function onSucces(position) {
   dailyAPI = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&cnt=7&units=metric&cnt=10&appid=${apiKey}`;
 
   fetchData();
+  alertError.style.display = "none"
 }
 
 //? currentlocation don't allow
