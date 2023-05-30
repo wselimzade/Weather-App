@@ -312,7 +312,7 @@ function weatherDetails(info) {
       if (id >= 500 && id < 504) {
         rain = "10d";
         let color =
-          "linear-gradient(104deg, rgba(213,210,207,1) 9%, rgba(157,101,65,1) 100%)";
+          "linear-gradient(104deg, rgb(190, 219, 224) 9%, rgba(157,101,65,1) 100%)";
         weather.style.background = color;
         defaultBackground.style.background = color;
       } else if (id === 511) {
@@ -362,13 +362,13 @@ function weatherDetails(info) {
         defaultBackground.style.background = color;
       } else if (id === 802) {
         clouds = "03d";
-        let color = "104deg, rgba(215,218,227,1) 9%, rgba(115,114,122,1) 100%";
+        let color = "104deg, rgba(215,218,227,1) 9%, rgb(115, 159, 196) 100%";
         weather.style.background = color;
         defaultBackground.style.background = color;
       } else {
         clouds = "04d";
         let color =
-          "linear-gradient(104deg,rgb(193, 196, 204) 9%,rgb(104, 103, 109) 100%";
+          "linear-gradient(104deg,rgb(193, 196, 204) 9%,rgb(90, 125, 153) 100%";
         weather.style.background = color;
         defaultBackground.style.background = color;
       }
@@ -535,6 +535,8 @@ const nightLink = document.getElementsByTagName("link")[1];
 const locationIcon = document.querySelector("#location")
 const searchIcontheme = document.querySelector("#search")
 
+const locationSearch = document.querySelector("#location-search") 
+
 function changeTheme() {
   if (nightLink.getAttribute("href") === "") {
     nightLink.setAttribute("href", "./css/night-mode.css");
@@ -544,6 +546,7 @@ function changeTheme() {
     lamp.style.borderRadius = "1.5rem";
     locationIcon.src = 'img/nightMode-location.svg'
     searchIcontheme.src = 'img/nightMode-search.svg'
+    locationSearch.src = 'img/nightMode-location.svg'
   } else {
     nightLink.href = "";
     lamp.src = 'img/dark.svg'
@@ -552,6 +555,7 @@ function changeTheme() {
     lamp.style.borderRadius = "";
     locationIcon.src = 'img/location.svg'
     searchIcontheme.src = 'img/search.svg'
+    locationSearch.src = 'img/location-svgrepo-com.svg'
 
   }
 }
