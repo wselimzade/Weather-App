@@ -97,14 +97,13 @@ p {
 .first-section
 .city-location-search
 .location,
-.arrow-down,
+.lamp,
 .search {
   width: 2.4rem;
   height: 2.4rem;
   display: flex;
   align-items: center;
   cursor: pointer;
-
 }
 
 .first-section
@@ -119,8 +118,13 @@ p {
 .first-section
 .city-location-search
 .city-location 
-.arrow-down {
+.lamp {
   margin-left: 1.1rem;
+}
+
+#lamp {
+  width: 1.4rem;
+  height: 1.4rem;
 }
 
 /*? date-clock-weather */
@@ -346,7 +350,7 @@ img
 .second-section
 .dg-clock
 .dg-clock-div
-.clock {
+.hClock {
     font-size: 1.2rem;
     font-weight: 400;
     color: #494343;
@@ -587,6 +591,7 @@ h6 {
 
 .second-page-third-section {
   margin-top: 2.4rem;
+  margin-bottom: 1.2rem;
 }
 
 .second-page-third-section

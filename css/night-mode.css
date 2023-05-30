@@ -1,0 +1,264 @@
+body {
+  background: #201d1d;
+}
+.container {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 2.4rem;
+  background-color: #ffffff;
+  transition: all 0.5s;
+}
+
+/*! @first-section */
+
+/*? city-location-search */
+
+.first-section .city-location-search .city-location h6 {
+  margin-left: 0.8rem;
+  font-weight: 400;
+  font-size: 1.4rem;
+  color: #ffffff;
+}
+
+/*? date-clock-weather */
+
+.first-section .date-clock-weather {
+  margin-top: 2.4rem;
+  background: linear-gradient(101.56deg, #4f7ffa 17.75%, #335fd1 84.8%);
+  color: #ffffff;
+  box-shadow: 0px 4px 40px rgba(86, 102, 141, 0.4);
+  border-radius: 12px;
+  width: 100%;
+}
+
+.first-section .date-clock-weather:hover {
+  background: linear-gradient(101.56deg, #496bc2 17.75%, #3556aa 84.8%);
+  cursor: pointer;
+}
+
+/*! @second-section */
+
+/*? text */
+
+.second-section .text {
+  margin-bottom: 1.6rem;
+  font-weight: 500;
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+/*? dg-clock */
+
+.second-section .dg-clock:hover::-webkit-scrollbar-thumb,
+.second-section .dg-clock::-webkit-scrollbar-thumb:active {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.second-section .dg-clock .dg-clock-div {
+  background-color: #242425;
+}
+
+.second-section .dg-clock .dg-clock-div:hover {
+  background: #1e1e1f;
+}
+
+.second-section .dg-clock .dg-clock-div .dg {
+  color: #ffffff;
+}
+
+.second-section .dg-clock .dg-clock-div .hClock {
+  color: #eeebeb;
+}
+
+/*! @third-section */
+
+/*? text */
+
+.third-section .text {
+  color: #ffffff;
+}
+
+.third-section .info .info-text .info-text-head {
+  color: #ffffff;
+}
+
+.third-section .info .info-text .info-text-content {
+  color: #eeebeb;
+}
+
+/*! Second Page First Section */
+
+.bg {
+  position: absolute;
+  width: 100%;
+  height: 36.2rem;
+  top: -0rem;
+  z-index: -1;
+  background: linear-gradient(
+    118.25deg,
+    #4f80fa 1.2%,
+    #3764d7 59.26%,
+    #335fd1 79.2%
+  );
+  /* background: white;  */
+}
+
+main {
+  background: transparent !important;
+}
+
+.second-page-first-section {
+  z-index: 1;
+}
+
+.second-page-first-section .city-location h6 {
+  color: #ffffff !important;
+}
+
+.second-page-first-section .city-location-search {
+  justify-content: space-between;
+}
+
+.second-page-first-section .date-clock-weather {
+  box-shadow: none;
+  background: none;
+  border-radius: 0;
+  color: #ffffff;
+}
+
+/*! second page third section */
+
+.second-page-third-section {
+  margin-top: 2.4rem;
+}
+
+.second-page-third-section .text {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.second-page-third-section .health {
+  margin-top: 1.6rem;
+  margin-bottom: 1.5rem;
+  background: #242425;
+  border-radius: 1.2rem;
+  padding: 1.7rem 1.6rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.second-page-third-section .health .health-info .health-info-head {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.4rem;
+}
+
+.second-page-third-section .health .health-info .health-info-text {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #eeebeb;
+  line-height: 1.8rem;
+}
+
+.humidity,
+.air,
+.wind,
+.fog {
+  display: flex;
+  align-items: center;
+  background: #242425;
+  padding: 1.6rem;
+  /* width: 16.4rem; */
+  width: 100%;
+  border-radius: 1.2rem;
+}
+
+.second-page-third-section .sum {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.4rem;
+}
+
+.second-page-third-section .name {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #eeebeb;
+}
+
+.second-page-third-section .sum-name {
+  margin-left: 1.2rem;
+}
+
+/*! search input */
+
+.search-input #search-input {
+  width: 55%;
+  padding: 1rem;
+  border: none;
+  box-shadow: 0.2rem 0.2rem 0.2rem 0rem rgba(26, 50, 95, 0.549);
+  background: #242425;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 300;
+  border-radius: 0.5rem;
+  text-indent: 1rem;
+}
+
+#search-input:focus {
+  border-bottom: 0.1rem solid #1d2723;
+}
+
+.search-start {
+  background-color: #3a4e81;
+  color: #eeebeb;
+  box-shadow: 0.2rem 0.2rem 0.2rem 0rem #1a325f8c;
+}
+
+.search-start:hover {
+  background-color: #1f2942;
+}
+
+.search-input .current-location {
+    background-color: #242425;
+  box-shadow: 0.2rem 0.2rem 0.2rem 0rem #1a325f8c;
+}
+
+.current-location img {
+  width: 1rem;
+}
+
+.current-location:hover {
+  background-color: #dddddd;
+}
+
+.close {
+  font-size: 1rem;
+  box-shadow: 0.2rem 0.2rem 0.2rem 0rem #1a325f8c;
+  margin-left: 1rem;
+  padding: 0.7rem;
+  background-color: #692525;
+  color: #f3dfdf;
+  
+}
+
+.close:hover {
+  background-color: rgb(59, 4, 4);
+  color: #f3f0f0;
+}
+
+/*! alert */
+
+#alert {
+  width: 100%;
+  margin-top: 1.6rem;
+  padding: 1rem;
+  text-align: center;
+  color: #f3dfdf;
+  background-color: #7c2525;
+  display: none;
+  transition: 0.5s all;
+}

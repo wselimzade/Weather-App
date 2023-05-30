@@ -91,6 +91,8 @@ const searchBar = document.querySelector("#search-input");
 let alertError = document.querySelector("#alert");
 
 let apiKey = "3916b6165d316713f49d8aae73379ad0";
+let hourlyApiKey = "589c7d4e5f14ad11826bb16eab1a45d7";
+let dailyApiKey = "af3f8c103b44df46d89c5554ad0c98d5";
 let API;
 let hourlyAPI;
 let dailyAPI;
@@ -117,7 +119,7 @@ function onSucces(position) {
   const { latitude, longitude } = position.coords;
   API = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
   hourlyAPI = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=metric&cnt=10&appid=${apiKey}`;
-  dailyAPI = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${latitude}&lon=${longitude}&cnt=7&units=metric&cnt=10&appid=${apiKey}`;
+  dailyAPI = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&cnt=7&units=metric&cnt=10&appid=${apiKey}`;
 
   fetchData();
 }
@@ -132,7 +134,7 @@ function onError(error) {
 function requestApi(city) {
   API = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
   hourlyAPI = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&cnt=10&units=metric&appid=${apiKey}`;
-  dailyAPI = `https://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&cnt=7&units=metric&appid=${apiKey}`;
+  dailyAPI = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&cnt=7&units=metric&appid=${apiKey}`;
   fetchData();
 }
 
@@ -159,7 +161,7 @@ function dailyDetails(dInfo) {
   //? warning, if input false value
 
   if (dInfo.cod == "404") {
-    alert("daily data is don't found");
+    console.log("daily data is don't found");
   } else {
     console.log(dInfo);
   }
@@ -524,3 +526,35 @@ const sLastUpdate = secondPageFirstSection.querySelector(".last-update");
 
 lastUpdate.innerText = `Last updated ${clockText}`;
 sLastUpdate.innerText = `Last updated ${clockText}`;
+
+//! nigt mode & light mode
+
+const lamp = document.querySelector("#lamp");
+const nightLink = document.getElementsByTagName("link")[1];
+
+const locationIcon = document.querySelector("#location")
+const searchIcontheme = document.querySelector("#search")
+
+function changeTheme() {
+  if (nightLink.getAttribute("href") === "") {
+    nightLink.setAttribute("href", "./css/night-mode.css");
+    lamp.src = "img/light.svg";
+    lamp.style.padding = "0.2rem";
+    lamp.style.backgroundColor = "white";
+    lamp.style.borderRadius = "1.5rem";
+    locationIcon.src = 'img/nightMode-location.svg'
+    searchIcontheme.src = 'img/nightMode-search.svg'
+  } else {
+    nightLink.href = "";
+    lamp.src = 'img/dark.svg'
+    lamp.style.padding = "";
+    lamp.style.backgroundColor = "";
+    lamp.style.borderRadius = "";
+    locationIcon.src = 'img/location.svg'
+    searchIcontheme.src = 'img/search.svg'
+
+  }
+}
+
+lamp.addEventListener("click", changeTheme);
+
