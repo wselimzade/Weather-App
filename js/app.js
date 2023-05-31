@@ -53,6 +53,7 @@ searchIcon.addEventListener("click", showSearchInput);
 const button = document.querySelector(".search-start");
 const close = document.querySelector(".close");
 const currentLocation = document.querySelector(".current-location");
+const lamp = document.querySelector("#lamp");
 
 const clickEffectButton = () => {
   button.classList.add("button-clicked");
@@ -79,9 +80,62 @@ const clickEffectLocation = () => {
   }, 200);
 };
 
+const clickEffectLamp = () => {
+  lamp.classList.add("button-clicked");
+
+  setTimeout(function () {
+    lamp.classList.remove("button-clicked");
+  }, 200);
+};
+
+const clickEffectSearch = () => {
+  searchIcon.classList.add("button-clicked");
+
+  setTimeout(function () {
+    searchIcon.classList.remove("button-clicked");
+  }, 200);
+};
+
+
+
 button.addEventListener("click", clickEffectButton);
 close.addEventListener("click", clickEffectClose);
 currentLocation.addEventListener("click", clickEffectLocation);
+lamp.addEventListener("click", clickEffectLamp);
+searchIcon.addEventListener("click", clickEffectSearch);
+
+//! nigt mode & light mode
+
+const nightLink = document.getElementsByTagName("link")[1];
+
+const locationIcon = document.querySelector("#location");
+const searchIcontheme = document.querySelector("#search");
+
+const locationSearch = document.querySelector("#location-search");
+
+function changeTheme() {
+  if (nightLink.getAttribute("href") === "") {
+    nightLink.setAttribute("href", "./css/night-mode.css");
+    lamp.src = "img/lightOff.png";
+    // lamp.style.padding = "0.2rem";
+    // lamp.style.backgroundColor = "white";
+    // lamp.style.borderRadius = "1.5rem";
+    locationIcon.src = "img/nightMode-location.svg";
+    searchIcontheme.src = "img/nightMode-search.svg";
+    locationSearch.src = "img/nightMode-location.svg";
+  } else {
+    nightLink.href = "";
+    lamp.src = "img/lightON.png";
+    lamp.style.padding = "";
+    lamp.style.backgroundColor = "";
+    lamp.style.borderRadius = "";
+    locationIcon.src = "img/location.svg";
+    searchIcontheme.src = "img/search.svg";
+    locationSearch.src = "img/location-svgrepo-com.svg";
+  }
+}
+
+lamp.addEventListener("click", changeTheme);
 
 //! Weather API Current Data
 
@@ -133,9 +187,16 @@ function onError(error) {
 
 //? Weather data for city name
 function requestApi(city) {
-  API = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
-  hourlyAPI = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&cnt=10&units=metric&appid=${apiKey}`;
-  dailyAPI = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&cnt=7&units=metric&appid=${apiKey}`;
+  API = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`; // işləyir
+
+  // hourlyAPI = `https://api.openweathermap.org/data/2.5/forecast/hourly?q=${city}&cnt=10&units=metric&appid=${apiKey}`;
+  // hourly API openweathermap documentation-da bu cur yazilib. Ancaq işləmir. "hourly" ifadəsini çıxardıqda işləyir.
+  hourlyAPI = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&cnt=10&units=metric&appid=${apiKey}`; // işləyir
+
+  // dailyAPI = `https://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&cnt=7&units=metric&appid=${apiKey}`;
+  // daily API openweathermap documentation-nda bu cur yazilib. Ancaq işləmir. "daily" ifadəsini çıxardıqda hourly API qaytarır.
+  dailyAPI = `https://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&cnt=7&units=metric&appid=${apiKey}`; // işləmir
+
   fetchData();
 }
 
@@ -527,37 +588,3 @@ const sLastUpdate = secondPageFirstSection.querySelector(".last-update");
 
 lastUpdate.innerText = `Last updated ${clockText}`;
 sLastUpdate.innerText = `Last updated ${clockText}`;
-
-//! nigt mode & light mode
-
-const lamp = document.querySelector("#lamp");
-const nightLink = document.getElementsByTagName("link")[1];
-
-const locationIcon = document.querySelector("#location");
-const searchIcontheme = document.querySelector("#search");
-
-const locationSearch = document.querySelector("#location-search");
-
-function changeTheme() {
-  if (nightLink.getAttribute("href") === "") {
-    nightLink.setAttribute("href", "./css/night-mode.css");
-    lamp.src = "img/lightOff.png";
-    // lamp.style.padding = "0.2rem";
-    // lamp.style.backgroundColor = "white";
-    // lamp.style.borderRadius = "1.5rem";
-    locationIcon.src = "img/nightMode-location.svg";
-    searchIcontheme.src = "img/nightMode-search.svg";
-    locationSearch.src = "img/nightMode-location.svg";
-  } else {
-    nightLink.href = "";
-    lamp.src = "img/lightON.png";
-    lamp.style.padding = "";
-    lamp.style.backgroundColor = "";
-    lamp.style.borderRadius = "";
-    locationIcon.src = "img/location.svg";
-    searchIcontheme.src = "img/search.svg";
-    locationSearch.src = "img/location-svgrepo-com.svg";
-  }
-}
-
-lamp.addEventListener("click", changeTheme);
