@@ -752,6 +752,9 @@ h6 {
 }
 
 .search-start {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 2.4rem;
   margin-left: 1.6rem;
   padding: 0.7rem;

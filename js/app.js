@@ -173,7 +173,7 @@ function onSucces(position) {
   const { latitude, longitude } = position.coords;
   API = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
   hourlyAPI = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=metric&cnt=10&appid=${apiKey}`;
-  dailyAPI = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&cnt=7&units=metric&cnt=10&appid=${apiKey}`;
+  dailyAPI = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&cnt=40&units=metric&cnt=10&appid=${apiKey}`;
 
   fetchData();
   alertError.style.display = "none";
@@ -195,7 +195,7 @@ function requestApi(city) {
 
   // dailyAPI = `https://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&cnt=7&units=metric&appid=${apiKey}`;
   // daily API openweathermap documentation-nda bu cur yazilib. Ancaq işləmir. "daily" ifadəsini çıxardıqda hourly API qaytarır.
-  dailyAPI = `https://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&cnt=7&units=metric&appid=${apiKey}`; // işləmir
+  dailyAPI = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&cnt=40&units=metric&appid=${apiKey}`; // işləmir
 
   fetchData();
 }
