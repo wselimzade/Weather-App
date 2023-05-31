@@ -96,8 +96,6 @@ const clickEffectSearch = () => {
   }, 200);
 };
 
-
-
 button.addEventListener("click", clickEffectButton);
 close.addEventListener("click", clickEffectClose);
 currentLocation.addEventListener("click", clickEffectLocation);
@@ -117,18 +115,12 @@ function changeTheme() {
   if (nightLink.getAttribute("href") === "") {
     nightLink.setAttribute("href", "./css/night-mode.css");
     lamp.src = "img/lightOff.png";
-    // lamp.style.padding = "0.2rem";
-    // lamp.style.backgroundColor = "white";
-    // lamp.style.borderRadius = "1.5rem";
     locationIcon.src = "img/nightMode-location.svg";
     searchIcontheme.src = "img/nightMode-search.svg";
     locationSearch.src = "img/nightMode-location.svg";
   } else {
     nightLink.href = "";
     lamp.src = "img/lightON.png";
-    lamp.style.padding = "";
-    lamp.style.backgroundColor = "";
-    lamp.style.borderRadius = "";
     locationIcon.src = "img/location.svg";
     searchIcontheme.src = "img/search.svg";
     locationSearch.src = "img/location-svgrepo-com.svg";
