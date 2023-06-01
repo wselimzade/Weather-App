@@ -338,12 +338,8 @@ function dailyDetails(dInfo) {
       }
     }
 
-    console.log(
-      tomorrowAverageTimeID,
-      theDayAfterTomorrowAverageTimeID,
-      inTwoDaysAverageTimeID,
-      inThreeDaysAverageTimeID
-    );
+    let infoTextAlertHead = thirdSection.querySelector(".info-text-head");
+    let infoTextAlertContent = thirdSection.querySelector(".info-text-content");
 
     //? Tomorrow weather info icon change for weather data
     // clear
@@ -351,18 +347,28 @@ function dailyDetails(dInfo) {
       let clear = "01d";
       tomorrowWeatherIcon.src = `https://openweathermap.org/img/w/${clear}.png`;
       weekDayInfoAll[0].innerText = tomorrowWeekDayInfo;
+      infoTextAlertHead.innerText =
+        "Clear and sunny weather is expected tomorrow.";
+      infoTextAlertContent.innerText =
+        "Enjoy a sunny day and engage in activities outside. Don't forget to apply sunscreen and drink enough water.";
     }
     //thunderstorm
     else if (tomorrowAverageTimeID >= 200 && tomorrowAverageTimeID <= 232) {
       let thunderstorm = "11d";
       tomorrowWeatherIcon.src = `https://openweathermap.org/img/w/${thunderstorm}.png`;
       weekDayInfoAll[0].innerText = tomorrowWeekDayInfo;
+      infoTextAlertHead.innerText = "Be prepared for a thunderstorm tomorrow.";
+      infoTextAlertContent.innerText =
+        "Be prepared for a thunderstorm tomorrow. Follow the weather updates and be prepared for possible power outages.";
     }
     // drizzle
     else if (tomorrowAverageTimeID >= 300 && tomorrowAverageTimeID <= 321) {
       let drizzle = "09d";
       tomorrowWeatherIcon.src = `https://openweathermap.org/img/w/${drizzle}.png`;
       weekDayInfoAll[0].innerText = tomorrowWeekDayInfo;
+      infoTextAlertHead.innerText = "Light drizzle expected tomorrow.";
+      infoTextAlertContent.innerText =
+        "It is useful to carry an umbrella or a waterproof jacket to stay dry. Drizzle can make surfaces slippery, step carefully.";
     }
     // rain
     else if (tomorrowAverageTimeID >= 500 && tomorrowAverageTimeID <= 531) {
@@ -376,18 +382,28 @@ function dailyDetails(dInfo) {
       }
       tomorrowWeatherIcon.src = `https://openweathermap.org/img/w/${rain}.png`;
       weekDayInfoAll[0].innerText = tomorrowWeekDayInfo;
+      infoTextAlertHead.innerText =
+        "Rain is expected during the weather forecast tomorrow.";
+      infoTextAlertContent.innerText =
+        "Remember to take an umbrella or raincoat to stay dry. Be careful when driving on wet roads and travel at a safe speed.";
     }
     // snow
     else if (tomorrowAverageTimeID >= 600 && tomorrowAverageTimeID <= 622) {
       let snow = "13d";
       tomorrowWeatherIcon.src = `https://openweathermap.org/img/w/${snow}.png`;
       weekDayInfoAll[0].innerText = tomorrowWeekDayInfo;
+      infoTextAlertHead.innerText = "Snowfall is expected tomorrow.";
+      infoTextAlertContent.innerText =
+        "Wear warm clothes and be careful on snowy grounds. Enjoy the beauty of snowfall! Be careful on slippery surfaces and stay safe.";
     }
     // atmosphere
     else if (tomorrowAverageTimeID >= 701 && tomorrowAverageTimeID <= 781) {
       let atmosphere = "50d";
       tomorrowWeatherIcon.src = `https://openweathermap.org/img/w/${atmosphere}.png`;
       weekDayInfoAll[0].innerText = tomorrowWeekDayInfo;
+      infoTextAlertHead.innerText = "Tomorrow may be foggy or misty.";
+      infoTextAlertContent.innerText =
+        "Be careful while driving and allow extra time for your journey. Use fog lights if necessary and stay at a safe distance from other vehicles.";
     }
     // clouds
     else if (tomorrowAverageTimeID >= 801 && tomorrowAverageTimeID <= 804) {
@@ -401,6 +417,10 @@ function dailyDetails(dInfo) {
       }
       tomorrowWeatherIcon.src = `https://openweathermap.org/img/w/${clouds}.png`;
       weekDayInfoAll[0].innerText = tomorrowWeekDayInfo;
+      infoTextAlertHead.innerText =
+        "Tomorrow will be cloudy, providing a cool and comfortable atmosphere.";
+      infoTextAlertContent.innerText =
+        "Enjoy indoor weather. Check for any updates or changes in weather conditions.";
     }
 
     //? theDayAfterTomorrow weather info icon change for weather data
@@ -623,15 +643,11 @@ function dailyDetails(dInfo) {
 
     const weekDayInfo = thirdSection.querySelectorAll(".weekDay-dg-info");
 
-    weekDayInfo[0].innerText = `${Math.floor(
-      tempAvarage(...tomorrowArr)
-    )}º C`;
+    weekDayInfo[0].innerText = `${Math.floor(tempAvarage(...tomorrowArr))}º C`;
     weekDayInfo[1].innerText = `${Math.floor(
       tempAvarage(...theDayAfterTomorrowArr)
     )}º C`;
-    weekDayInfo[2].innerText = `${Math.floor(
-      tempAvarage(...inTwoDaysArr)
-    )}º C`;
+    weekDayInfo[2].innerText = `${Math.floor(tempAvarage(...inTwoDaysArr))}º C`;
     weekDayInfo[3].innerText = `${Math.floor(
       tempAvarage(...inThreeDaysArr)
     )}º C`;

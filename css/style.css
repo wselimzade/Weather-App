@@ -486,7 +486,7 @@ img {
   font-size: 1.3rem;
   font-family: 400;
   color: #494343;
-  /* width: 9rem; */
+  white-space:nowrap;
 }
 
 .third-section
