@@ -97,7 +97,7 @@ p {
 .first-section
 .city-location-search
 .location,
-.lamp,
+.fire,
 .search {
   width: 2.4rem;
   height: 2.4rem;
@@ -118,13 +118,14 @@ p {
 .first-section
 .city-location-search
 .city-location 
-.lamp {
+.fire {
   margin-left: 1.1rem;
 }
 
-#lamp {
-  width: 1.4rem;
-  height: 1.2rem;
+#fire {
+  /* width: 1.4rem; */
+  /* height: 1.2rem; */
+  color: #f73d0ecb;
 }
 
 /*? date-clock-weather */

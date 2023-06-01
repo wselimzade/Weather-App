@@ -53,7 +53,7 @@ searchIcon.addEventListener("click", showSearchInput);
 const button = document.querySelector(".search-start");
 const close = document.querySelector(".close");
 const currentLocation = document.querySelector(".current-location");
-const lamp = document.querySelector("#lamp");
+const fire = document.querySelector("#fire");
 
 const clickEffectButton = () => {
   button.classList.add("button-clicked");
@@ -80,11 +80,11 @@ const clickEffectLocation = () => {
   }, 200);
 };
 
-const clickEffectLamp = () => {
-  lamp.classList.add("button-clicked");
+const clickEffectFire = () => {
+  fire.classList.add("button-clicked");
 
   setTimeout(function () {
-    lamp.classList.remove("button-clicked");
+    fire.classList.remove("button-clicked");
   }, 200);
 };
 
@@ -99,12 +99,12 @@ const clickEffectSearch = () => {
 button.addEventListener("click", clickEffectButton);
 close.addEventListener("click", clickEffectClose);
 currentLocation.addEventListener("click", clickEffectLocation);
-lamp.addEventListener("click", clickEffectLamp);
+fire.addEventListener("click", clickEffectFire);
 searchIcon.addEventListener("click", clickEffectSearch);
 
 //! nigt mode & light mode
 
-const nightLink = document.getElementsByTagName("link")[1];
+const nightLink = document.getElementsByTagName("link")[2];
 
 const locationIcon = document.querySelector("#location");
 const searchIcontheme = document.querySelector("#search");
@@ -114,20 +114,18 @@ const locationSearch = document.querySelector("#location-search");
 function changeTheme() {
   if (nightLink.getAttribute("href") === "") {
     nightLink.setAttribute("href", "./css/night-mode.css");
-    lamp.src = "img/lightOff.png";
     locationIcon.src = "img/nightMode-location.svg";
     searchIcontheme.src = "img/nightMode-search.svg";
     locationSearch.src = "img/nightMode-location.svg";
   } else {
     nightLink.href = "";
-    lamp.src = "img/lightON.png";
     locationIcon.src = "img/location.svg";
     searchIcontheme.src = "img/search.svg";
     locationSearch.src = "img/location-svgrepo-com.svg";
   }
 }
 
-lamp.addEventListener("click", changeTheme);
+fire.addEventListener("click", changeTheme);
 
 //! Weather API Current Data
 
@@ -165,7 +163,7 @@ function onSucces(position) {
   const { latitude, longitude } = position.coords;
   API = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
   hourlyAPI = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=metric&cnt=10&appid=${apiKey}`;
-  dailyAPI = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&cnt=40&units=metric&cnt=10&appid=${apiKey}`;
+  dailyAPI = `https://api.openweathermap.org/data/2.5/forecast?dailylat=${latitude}&lon=${longitude}&cnt=40&units=metric&cnt=10&appid=${apiKey}`;
 
   fetchData();
   alertError.style.display = "none";
@@ -187,7 +185,7 @@ function requestApi(city) {
 
   // dailyAPI = `https://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&cnt=7&units=metric&appid=${apiKey}`;
   // daily API openweathermap documentation-nda bu cur yazilib. Ancaq işləmir. "daily" ifadəsini çıxardıqda hourly API qaytarır.
-  dailyAPI = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&cnt=40&units=metric&appid=${apiKey}`; // işləmir
+  dailyAPI = `https://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&cnt=40&units=metric&appid=${apiKey}`; // işləmir
 
   fetchData();
 }
