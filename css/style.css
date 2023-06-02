@@ -123,8 +123,6 @@ p {
 }
 
 #fire {
-  /* width: 1.4rem; */
-  /* height: 1.2rem; */
   color: #f73d0ecb;
 }
 
@@ -142,7 +140,6 @@ p {
 
 .first-section
 .date-clock-weather:hover {
-  /* background: linear-gradient(101.56deg, #496bc2 17.75%, #3556aa 84.8%); */
   cursor: pointer;
 }
 
@@ -308,7 +305,6 @@ p {
     padding: 1.2rem 1.9rem;
     margin-right: 1rem;
     transition: transform 0.3s ease-in-out;
-
 }
 
 .second-section
@@ -388,7 +384,6 @@ img
 .info
 .info-text {
   margin-left: 1.6rem;
-  /* width: 22rem; */
 }
 
 .third-section
@@ -421,7 +416,6 @@ img
   margin-bottom: 1.2rem;
   padding: 1.6rem;
   cursor: pointer;
- 
 }
 
 .third-section
@@ -475,7 +469,6 @@ img {
   color: #201C1C;
   width: 9rem;
   margin-bottom: 0.4rem;
-
 }
 
 .third-section
@@ -508,7 +501,6 @@ img {
   top: -0rem;
   z-index: -1;
   background: linear-gradient(118.25deg, #4F80FA 1.2%, #3764D7 59.26%, #335FD1 79.2%); 
-  /* background: white;  */
 }
 
 main {
@@ -629,7 +621,6 @@ h6 {
   padding: 2.5rem;
 }
 
-
 .second-page-third-section
 .health
 .health-info {
@@ -673,7 +664,6 @@ h6 {
 .info
 .wind-fog {
   display: flex;
-
 }
 
 .humidity,
@@ -684,7 +674,6 @@ h6 {
   align-items: center;
   background: #FAFAFA;
   padding: 1.6rem;
-  /* width: 16.4rem; */
   width: 100%;
   border-radius: 1.2rem;
 }
@@ -723,7 +712,6 @@ h6 {
   margin-top: 1.6rem;
   width: 100%;
   display: none;
-
 }
 
 .search-input

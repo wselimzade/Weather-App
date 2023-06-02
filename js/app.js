@@ -135,8 +135,6 @@ const searchBar = document.querySelector("#search-input");
 let alertError = document.querySelector("#alert");
 
 let apiKey = "3916b6165d316713f49d8aae73379ad0";
-let hourlyApiKey = "589c7d4e5f14ad11826bb16eab1a45d7";
-let dailyApiKey = "af3f8c103b44df46d89c5554ad0c98d5";
 let API;
 let hourlyAPI;
 let dailyAPI;
@@ -750,7 +748,7 @@ function weatherDetails(info) {
     const { description, id } = info.weather[0];
     const { humidity, temp, pressure } = info.main;
     const wind = info.wind.speed;
-    const visibility = info.visibility
+    const visibility = info.visibility;
 
     let sameTemp = (firstSection.querySelector(
       "#degree"
@@ -777,9 +775,9 @@ function weatherDetails(info) {
     secondPageThirdSection.querySelector(
       "#air-sum"
     ).innerText = `${pressure} hPa`;
-    secondPageThirdSection.querySelector(
-      "#fog-sum"
-    ).innerText = `${visibility/1000} km`;
+    secondPageThirdSection.querySelector("#fog-sum").innerText = `${
+      visibility / 1000
+    } km`;
 
     //? weather icons for different temprature
     // clear
@@ -898,8 +896,6 @@ window.onload = () => {
     alertError.style.display = "none!important";
   }
 };
-
-//! Weather API hourly data
 
 //! Date, Hour
 
