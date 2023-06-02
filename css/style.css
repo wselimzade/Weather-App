@@ -807,6 +807,9 @@ h6 {
 }
 
 .close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 2.4rem;
   font-size: 1rem;
   box-shadow: 0.2rem 0.2rem 0.2rem 0rem #1a325f8c;
