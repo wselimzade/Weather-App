@@ -175,15 +175,9 @@ function onError(error) {
 
 //? Weather data for city name
 function requestApi(city) {
-  API = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`; // işləyir
-
-  // hourlyAPI = `https://api.openweathermap.org/data/2.5/forecast/hourly?q=${city}&cnt=10&units=metric&appid=${apiKey}`;
-  // hourly API openweathermap documentation-da bu cur yazilib. Ancaq işləmir. "hourly" ifadəsini çıxardıqda işləyir.
-  hourlyAPI = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&cnt=10&units=metric&appid=${apiKey}`; // işləyir
-
-  // dailyAPI = `https://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&cnt=7&units=metric&appid=${apiKey}`;
-  // daily API openweathermap documentation-nda bu cur yazilib. Ancaq işləmir. "daily" ifadəsini çıxardıqda hourly API qaytarır.
-  dailyAPI = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&cnt=40&units=metric&appid=${apiKey}`; // işləmir
+  API = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+  hourlyAPI = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&cnt=10&units=metric&appid=${apiKey}`;
+  dailyAPI = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&cnt=40&units=metric&appid=${apiKey}`;
 
   fetchData();
 }
