@@ -50,3 +50,4 @@ The application is completely safe to use.
 All rights of users are reserved.
 
 Thank you for your attention!
+https://wselimzade.github.io/WeatherApp/
