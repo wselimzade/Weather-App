@@ -748,8 +748,9 @@ function weatherDetails(info) {
     const city = info.name;
     const country = info.sys.country;
     const { description, id } = info.weather[0];
-    const { humidity, temp, pressure, fog } = info.main;
+    const { humidity, temp, pressure } = info.main;
     const wind = info.wind.speed;
+    const visibility = info.visibility
 
     let sameTemp = (firstSection.querySelector(
       "#degree"
@@ -776,8 +777,9 @@ function weatherDetails(info) {
     secondPageThirdSection.querySelector(
       "#air-sum"
     ).innerText = `${pressure} hPa`;
-    secondPageThirdSection.querySelector("#fog-sum").innerText =
-      fog === undefined ? "-" : `${fog}%`;
+    secondPageThirdSection.querySelector(
+      "#fog-sum"
+    ).innerText = `${visibility/1000} km`;
 
     //? weather icons for different temprature
     // clear
