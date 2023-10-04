@@ -2,6 +2,7 @@
 
 The WeatherApp application will give you different information based on the location you are currently in or the location you are searching for.
 
+The design of the program was developed based on the example developed by the user named Reynaldi Daniel on the Figma platform, with additions made to it. https://www.figma.com/community/file/1055880209981553884
 ---
 
 Historical information:
